@@ -1,0 +1,10 @@
+Package: SPECIES
+Type: Package
+Title: Statistical package for species richness estimation
+Version: 2.0
+Date: 2010-01-24
+Author: Ji-Ping Wang, <jzwang@northwestern.edu>
+Maintainer: Ji-Ping Wang <jzwang@northwestern.edu>
+Description: SPECIES is an R package for estimation of species richness or diversity. 
+License: GPL-2
+Packaged: 2010-08-23 15:55:03 UTC; 

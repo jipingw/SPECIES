@@ -1,0 +1,2 @@
+useDynLib(SPECIES)
+export(ChaoBunge,chao1984,pnpmle,ChaoLee1992, jackknife, unpmle,pcg)
