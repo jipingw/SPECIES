@@ -133,7 +133,7 @@ unpmle =function(n,t=15,C=0,method="W-L",b=200,conf=.95,seed=NULL,dis=1){
       ##define less abundant species using t=50
       t=50
     }
-    ntemp=c(n[1:t,2],rep(0,50-t))
+    ntemp=c(n[1:t,2])*1.0
     if(method=="N-P"){
       while(MLE<0){
         MLE=-1.0

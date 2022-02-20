@@ -25,7 +25,7 @@ SUBROUTINE NPMLEpen (n,p,pi,noZeroP,t,test,Etol,Gtol,gap,gamma2)
   !                test:    maximum gradient achieved at convengence of algorithm
   !                Etol:    threshold value for convergence in terms of log likelihood in the EM part
   !                Gtol:    threshold value for convergence of entire algorithm in terms of gradient
-  !                gap:     threshold value to control which components to be merged if two components are close.
+  !                gap:     threold value to control which components to be merged if two components are close.
   !                gamma2:  the penalty factor in the penalized likelihood with linearied penalty.
   !
   !       Called by: WLnpmle, and pnpmle, and PPCG
@@ -547,7 +547,7 @@ DOUBLE PRECISION FUNCTION lgamma(X)
   !     York, 1968.
   !     
   !     Authors: W. J. Cody and L. Stoltz
-  !     Argonne National Laboratory
+  !     rgonne National Laboratory
   !----------------------------------------------------------------------
 
   INTEGER I

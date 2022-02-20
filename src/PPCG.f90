@@ -307,7 +307,7 @@ SUBROUTINE PCGpen (n,p,pi,noZeroP,a,t,test,Etol,Gtol,gap,gamma2)
      pvec(i+1000)=1.+1D-2*i
   END DO
 
-  IF(noZeroP==0) THEN
+ ! IF(noZeroP==0) THEN
      p=p*0.D0
      pi=pi*0.D0
      sum_a=0.0D0; sum_b=0.0D0
@@ -317,7 +317,7 @@ SUBROUTINE PCGpen (n,p,pi,noZeroP,a,t,test,Etol,Gtol,gap,gamma2)
      p_add=sum_a/sum_b; p(1)=p_add; pi(1)=1
      p(1)=p_add; pi(1)=1.0D0
      noZeroP=1
-  END IF
+ ! END IF
 
   CALL EMScon_theta(n,p,pi,noZeroP,Etol,a,t,gamma2)
   CALL checkGap(p,pi,gap,noZeroP) 

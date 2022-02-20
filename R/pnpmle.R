@@ -98,7 +98,7 @@ pnpmle =function(n,t=15,C=0,b=200,seed=NULL,conf=0.95,dis=1){
       t=50
     }
     
-    ntemp=c(n[1:t,2],rep(0,50-t))
+    ntemp=c(n[1:t,2])
     while(MLE<0){
       MLE=-1.0
       p=rep(0.,10)

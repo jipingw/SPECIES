@@ -1,2 +1,4 @@
 useDynLib(SPECIES)
+importFrom("stats", "dbeta", "dbinom", "dpois", "qnorm", "quantile")
+importFrom("utils", "flush.console")
 export(ChaoBunge,chao1984,pnpmle,ChaoLee1992, jackknife, unpmle,pcg)

@@ -104,7 +104,7 @@ pcg =function(n,t=35,C=0,alpha=c(1:10),b=200,seed=NULL,conf=0.95,dis=1){
       ##define less abundant species using t=50
       t=50
     }
-    ntemp=c(n[1:t,2],rep(0,50-t))
+    ntemp=c(n[1:t,2])
     MLE=-1.0
     while(MLE<0){
       MLE=-1.0
@@ -154,14 +154,13 @@ bootPCG= function(p,pi,b,t,rep,amodel0,alpha,conf){
   
   if(amodel0<Inf){
     SampleProb=PmixSCon(c(1:t),p,pi,amodel0)
-    amodel=amodel0
   } else{
     SampleProb=Pmix(c(1:t),p,pi)
-    amodel=500
   }
   Nest=numeric(b)
   alphaK=length(alpha)
-
+  amodel=0
+  
   cat("\n","Start bootstrap", b,  " times:","\n")
   
   for (i in 1:b){
@@ -180,9 +179,7 @@ bootPCG= function(p,pi,b,t,rep,amodel0,alpha,conf){
       pi=p
       noZeroP=0
       theta0=0.0
-      #results=.Fortran("PPCG",as.double(boot),as.integer(t),MLE=as.double(MLE),amodel=as.double(amodel),p=as.double(p),pi=as.double(pi),noZeroP=as.integer(noZeroP),PACKAGE="SPECIES")
-      results=.Fortran("PPCGb",as.double(boot),as.integer(t),MLE=as.double(MLE),amodel=as.double(amodel),p=as.double(p),pi=as.double(pi),noZeroP=as.integer(noZeroP),PACKAGE="SPECIES")
-     
+      results=.Fortran("PPCG",as.double(boot),as.integer(t),MLE=as.double(MLE),as.double(alpha),as.integer(alphaK),amodel=as.double(amodel),p=as.double(p),pi=as.double(pi),noZeroP=as.integer(noZeroP),PACKAGE="SPECIES")
       MLE=results$MLE
     }
     Nest[i]=results$MLE
